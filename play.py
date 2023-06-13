@@ -1,11 +1,16 @@
 import scrapy
+from scrapy.exceptions import CloseSpider
 from scrapy.crawler import CrawlerProcess
 
-# query = "the professional"
+process = CrawlerProcess(
+    {
+        "USER_AGENT": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.15.3 Chrome/87.0.4280.144 Safari/537.36"
+    }
+)
 
 
 class MySpider(scrapy.Spider):
-    query = input("Query: ")
+    query = input('Query: ')
     # custom_settings = {"LOG_ENABLED": False}
     name = "blogspider"
     results = []
@@ -23,6 +28,16 @@ class MySpider(scrapy.Spider):
             )
             if i >= 20:
                 break
+
+    def start(self):
+        pass
+
+    def close(self):
+        raise CloseSpider()
+
+
+    # def set_query(self):
+    #     self.query = input('Query: ')
 
     def get_results(self):
         return self.results
