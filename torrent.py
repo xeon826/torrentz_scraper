@@ -11,6 +11,7 @@ class Torrent:
     torrent_index = ""
     stop = False
     active_torrent = ''
+    progress = ''
     # qb.download_from_link()
 
     def download(self, magnet):
@@ -32,6 +33,9 @@ class Torrent:
             / self.qb.torrents()[self.torrent_index]["total_size"]
         ) == 1
 
+    def get_raw_progress(self):
+        return self.progress
+
     def show_progress(self):
         self.active_torrent = self.qb.torrents()[self.torrent_index]
         progress = ((self.active_torrent["completed"] / self.active_torrent["total_size"]) * 100)
@@ -48,6 +52,7 @@ class Torrent:
                 self.active_torrent["name"], progress, ''.join(bar)
             ),
         )
+        self.progress = progress
 
     def get_hash(self, magnet):
         return magnet.split("&")[0].upper()

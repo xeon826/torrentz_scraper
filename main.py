@@ -1,7 +1,7 @@
 import os
 import sys
-# import subprocess
-from subprocess import call
+import subprocess
+# from subprocess import call
 import time
 from threading import Event
 
@@ -22,6 +22,7 @@ process = CrawlerProcess(
 spider = MySpider()
 process.crawl(spider.__class__)
 process.start()
+torrent = Torrent()
 
 
 def main():
@@ -35,18 +36,22 @@ def main():
             print("bye")
             break
         else:
-            torrent = Torrent()
             torrent.download(results[int(selection)]["magnet"][0])
+            playing = False
             while not exit.is_set():
                 torrent.show_progress()
                 exit.wait(1)
                 clear = lambda: os.system("clear")
                 clear()
+                playing = False
+                if torrent.get_raw_progress() > 10 and not playing:
+                    subprocess.run('mpv "%s/"' % torrent.active_torrent['content_path'], shell=True)
+                    # torrent.stop()
+                    # call(['mpv', torrent.active_torrent['content_path']])
+                    playing = True
+                    print("playing")
                 if torrent.is_complete():
                     torrent.stop()
-                    call(['mpv', torrent.active_torrent['content_path']])
-                    print("playing")
-                    break
             break
         exit.wait(1)
     process.stop()
@@ -54,6 +59,7 @@ def main():
 
 def quit(signo, _frame):
     print("Interrupted by %d, shutting down" % signo)
+    torrent.stop()
     exit.set()
 
 
