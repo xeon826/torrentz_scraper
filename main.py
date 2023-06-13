@@ -1,7 +1,13 @@
-from scrapy.crawler import CrawlerProcess
-from scrapy.exceptions import CloseSpider
+import os
+import sys
+# import subprocess
+from subprocess import call
 import time
 from threading import Event
+
+from scrapy.crawler import CrawlerProcess
+from scrapy.exceptions import CloseSpider
+
 from play import MySpider
 from torrent import Torrent
 
@@ -17,25 +23,33 @@ spider = MySpider()
 process.crawl(spider.__class__)
 process.start()
 
+
 def main():
     while not exit.is_set():
         results = spider.get_results()
         for i, obj in enumerate(results):
             print("%s) %s %s %s" % (str(i), obj["title"], obj["seeds"], obj["leeches"]))
 
-        selection = input('0-20 to select, r to perform new query, x to quit: ')
-        if selection == 'x':
-            print('bye')
+        selection = input("0-20 to select, r to perform new query, x to quit: ")
+        if selection == "x":
+            print("bye")
             break
         else:
             torrent = Torrent()
-            torrent.download(results[int(selection)]['magnet'][0])
+            torrent.download(results[int(selection)]["magnet"][0])
             while not exit.is_set():
                 torrent.show_progress()
                 exit.wait(1)
+                clear = lambda: os.system("clear")
+                clear()
+                if torrent.is_complete():
+                    torrent.stop()
+                    call(['mpv', torrent.active_torrent['content_path']])
+                    print("playing")
+                    break
             break
-        process.stop()
         exit.wait(1)
+    process.stop()
 
 
 def quit(signo, _frame):
@@ -43,10 +57,11 @@ def quit(signo, _frame):
     exit.set()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import signal
-    print('MAIN')
-    for sig in ('TERM', 'HUP', 'INT'):
-        signal.signal(getattr(signal, 'SIG'+sig), quit)
+
+    print("MAIN")
+    for sig in ("TERM", "HUP", "INT"):
+        signal.signal(getattr(signal, "SIG" + sig), quit)
 
     main()

@@ -11,10 +11,9 @@ process = CrawlerProcess(
 
 class MySpider(scrapy.Spider):
     query = input('Query: ')
-    # custom_settings = {"LOG_ENABLED": False}
+    custom_settings = {"LOG_ENABLED": False}
     name = "blogspider"
     results = []
-    # start_urls = ['https://torrentz2.nz/search?q=the+ritual']
     start_urls = ["https://torrentz2.nz/search?q=%s" % str(query)]
 
     def parse(self, response):

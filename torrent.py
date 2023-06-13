@@ -1,4 +1,5 @@
 import time
+import re
 
 from clint.textui import progress
 from qbittorrent import Client
@@ -7,12 +8,13 @@ from qbittorrent import Client
 class Torrent:
     qb = Client("http://127.0.0.1:8080/")
     qb.login("admin", "adminadmin")
-    torrent_index = ''
+    torrent_index = ""
     stop = False
+    active_torrent = ''
     # qb.download_from_link()
 
     def download(self, magnet):
-        self.qb.download_from_link(magnet)
+        self.qb.download_from_link(magnet, savepath='/media/dan/My Passport/movies/')
         # print(self.qb.torrents()[-1])
         torrents = self.qb.torrents()
         active_torrent_index = ""
@@ -22,17 +24,28 @@ class Torrent:
                 break
 
     def stop(self):
-        self.stop = True
+        self.qb.pause_all()
+
+    def is_complete(self):
+        return (
+            self.qb.torrents()[self.torrent_index]["completed"]
+            / self.qb.torrents()[self.torrent_index]["total_size"]
+        ) == 1
 
     def show_progress(self):
+        self.active_torrent = self.qb.torrents()[self.torrent_index]
+        progress = ((self.active_torrent["completed"] / self.active_torrent["total_size"]) * 100)
+        bar = list('[')
+        for i in range(1, 101):
+            if i <= progress:
+                bar.append('#')
+            else:
+                bar.append('_')
+        bar.append(']')
+        bar[round(progress)] = '#'
         print(
-            "%s %",
-            str(
-                (
-                    self.qb.torrents()[self.torrent_index]["completed"]
-                    / self.qb.torrents()[self.torrent_index]["total_size"]
-                )
-                * 100
+            "Download {0} is at {1:.0f}% \n {2}".format(
+                self.active_torrent["name"], progress, ''.join(bar)
             ),
         )
 
