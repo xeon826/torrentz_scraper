@@ -27,38 +27,28 @@ process.start()
 torrent = Torrent()
 
 
-class bcolors:
-    HEADER = "\033[95m"
-    OKBLUE = "\033[94m"
-    OKCYAN = "\033[96m"
-    OKGREEN = "\033[92m"
-    WARNING = "\033[93m"
-    FAIL = "\033[91m"
-    ENDC = "\033[0m"
-    BOLD = "\033[1m"
-    UNDERLINE = "\033[4m"
-
-
 def main():
     results = spider.get_results()
     results_as_list = []
     for i, result in enumerate(results):
         if i % 2 == 0:
-            title_color = "light_cyan"
+            row_color = "yellow"
         else:
-            title_color = "magenta"
+            row_color = "blue"
         # green_on_black = lambda x: cprint(str(i) + ")__", "red", "on_black")
         obj = [
-            colored(str(i) + ")__", "blue", attrs=["bold", "reverse"]),
-            colored(result["title"], title_color, attrs=["bold", "reverse"]),
-            colored(result["size"], "light_blue", attrs=["underline"]),
+            colored(str(i) + ")__", row_color, attrs=["bold", "reverse"]),
+            colored(result["title"], row_color, attrs=["bold", "reverse"]),
+            colored(result["size"], row_color, attrs=["bold"]),
             colored(result["seeds"], "green", attrs=["underline"]),
-            colored(result["leeches"], "red", attrs=["underline"]),
+            colored(result["leeches"], "blue", attrs=["underline"]),
         ]
         results_as_list.append(obj)
     print(
         tabulate(
-            results_as_list, headers=["Option", "Title", "Size", "Seeds", "Leeches"]
+            results_as_list,
+            headers=["Option", "Title", "Size", "Seeds", "Leeches"],
+            tablefmt="outline",
         )
     )
 

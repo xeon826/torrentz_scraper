@@ -32,7 +32,7 @@ class MySpider(scrapy.Spider):
                     "leeches": leeches,
                 }
             )
-            if i >= 30:
+            if i >= 50:
                 break
 
     def start(self):
