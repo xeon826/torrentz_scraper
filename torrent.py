@@ -25,6 +25,7 @@ class Torrent:
                 break
 
     def stop(self):
+        print('stopping torrent')
         self.qb.pause_all()
 
     def is_complete(self):
