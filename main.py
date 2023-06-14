@@ -65,7 +65,7 @@ def main():
             exit.wait(1)
             clear = lambda: os.system("clear")
             clear()
-            if torrent.get_raw_progress() > 10 and not playing:
+            if torrent.get_raw_progress() > 20 and not playing:
                 subprocess.run(
                     'nohup mpv "%s/" &' % torrent.active_torrent["content_path"],
                     shell=True,
