@@ -13,6 +13,13 @@ from termcolor import colored, cprint
 from play import MySpider
 from torrent import Torrent
 
+vpn_is_running = "Connected" in subprocess.check_output(
+    'nordvpn status | grep "Status"', shell=True, text=True
+)
+if not vpn_is_running:
+    print("VPN is not running")
+    sys.exit()
+
 exit = Event()
 process = CrawlerProcess(
     {
@@ -35,7 +42,6 @@ def main():
             row_color = "yellow"
         else:
             row_color = "blue"
-        # green_on_black = lambda x: cprint(str(i) + ")__", "red", "on_black")
         obj = [
             colored(str(i) + ")__", row_color, attrs=["bold", "reverse"]),
             colored(result["title"], row_color, attrs=["bold", "reverse"]),

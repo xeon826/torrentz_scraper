@@ -1,5 +1,5 @@
-import time
 import re
+import time
 
 from clint.textui import progress
 from qbittorrent import Client
@@ -10,23 +10,24 @@ class Torrent:
     qb.login("admin", "adminadmin")
     torrent_index = ""
     stop = False
-    active_torrent = ''
-    progress = ''
+    active_torrent = ""
+    progress = ""
     # qb.download_from_link()
 
     def download(self, magnet):
-        self.qb.download_from_link(magnet, savepath='/mnt/My_Passport/movies/')
-        # print(self.qb.torrents()[-1])
-        self.qb.toggle_sequential_download('all')
+        self.qb.download_from_link(magnet, savepath="/mnt/My_Passport/movies/")
+        hash = self.get_hash(magnet)
+        # self.qb.toggle_sequential_download([hash])
         torrents = self.qb.torrents()
         active_torrent_index = ""
         for i, torrent in enumerate(self.qb.torrents()):
             if self.get_hash(torrent["magnet_uri"]) == self.get_hash(magnet):
                 self.torrent_index = i
+                self.qb.toggle_sequential_download(self.qb.torrents()[i]["infohash_v1"])
                 break
 
     def stop(self):
-        print('stopping torrent')
+        print("stopping torrent")
         self.qb.pause_all()
 
     def is_complete(self):
@@ -40,18 +41,20 @@ class Torrent:
 
     def show_progress(self):
         self.active_torrent = self.qb.torrents()[self.torrent_index]
-        progress = ((self.active_torrent["completed"] / self.active_torrent["total_size"]) * 100)
-        bar = list('[')
+        progress = (
+            self.active_torrent["completed"] / self.active_torrent["total_size"]
+        ) * 100
+        bar = list("[")
         for i in range(1, 101):
             if i <= progress:
-                bar.append('#')
+                bar.append("#")
             else:
-                bar.append('_')
-        bar.append(']')
-        bar[round(progress)] = '#'
+                bar.append("_")
+        bar.append("]")
+        bar[round(progress)] = "#"
         print(
             "Download {0} is at {1:.0f}% \n {2}".format(
-                self.active_torrent["name"], progress, ''.join(bar)
+                self.active_torrent["name"], progress, "".join(bar)
             ),
         )
         self.progress = progress
