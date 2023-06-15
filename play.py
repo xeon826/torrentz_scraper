@@ -1,4 +1,5 @@
 import scrapy
+import unicodedata
 from scrapy.crawler import CrawlerProcess
 from scrapy.exceptions import CloseSpider
 
@@ -14,20 +15,22 @@ class MySpider(scrapy.Spider):
     custom_settings = {"LOG_ENABLED": False}
     name = "blogspider"
     results = []
-    start_urls = ["https://torrentz2.nz/search?q=%s" % str(query)]
+    start_urls = ["https://thepiratebay0.org/search/%s" % str(query)]
 
     def parse(self, response):
-        for i, row in enumerate(response.css(".results > dl")):
-            title = row.css("dt > a::text").extract()[0]
-            magnet = row.css("dd > span > a::attr('href')").extract()
-            size = row.css("dd > span:nth-child(3)::text").extract()[0]
-            seeds = row.css("dd > span:nth-child(4)::text").extract()[0]
-            leeches = row.css("dd > span:nth-child(5)::text").extract()[0]
+        for i, row in enumerate(response.css("table#searchResult > tr")):
+            title = row.css("td:nth-child(2) > div > a::text").extract()[0]
+            if len(title) == 0:
+                continue
+            magnet = row.css("td:nth-child(2) > a::attr('href')").extract()
+            desc = row.css("font.detDesc::text").extract()[0].encode('ascii', 'replace')
+            seeds = row.css("td:nth-child(3)::text").extract()[0]
+            leeches = row.css("td:nth-child(4)::text").extract()[0]
             self.results.append(
                 {
                     "title": title,
                     "magnet": magnet,
-                    "size": size,
+                    "desc": desc,
                     "seeds": seeds,
                     "leeches": leeches,
                 }
@@ -37,12 +40,6 @@ class MySpider(scrapy.Spider):
 
     def start(self):
         pass
-
-    def close(self):
-        raise CloseSpider()
-
-    # def set_query(self):
-    #     self.query = input('Query: ')
 
     def get_results(self):
         return self.results

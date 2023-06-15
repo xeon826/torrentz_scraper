@@ -39,7 +39,7 @@ def main():
         obj = [
             colored(str(i) + ")__", row_color, attrs=["bold", "reverse"]),
             colored(result["title"], row_color, attrs=["bold", "reverse"]),
-            colored(result["size"], row_color, attrs=["bold"]),
+            colored(result["desc"], row_color, attrs=["bold"]),
             colored(result["seeds"], "green", attrs=["underline"]),
             colored(result["leeches"], "blue", attrs=["underline"]),
         ]
@@ -47,7 +47,7 @@ def main():
     print(
         tabulate(
             results_as_list,
-            headers=["Option", "Title", "Size", "Seeds", "Leeches"],
+            headers=["Option", "Title", "Desc", "Seeds", "Leeches"],
             tablefmt="outline",
         )
     )

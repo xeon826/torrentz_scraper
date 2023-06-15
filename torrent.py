@@ -15,8 +15,9 @@ class Torrent:
     # qb.download_from_link()
 
     def download(self, magnet):
-        self.qb.download_from_link(magnet, savepath='/media/dan/My Passport/movies/')
+        self.qb.download_from_link(magnet, savepath='/mnt/My_Passport/movies/')
         # print(self.qb.torrents()[-1])
+        self.qb.toggle_sequential_download('all')
         torrents = self.qb.torrents()
         active_torrent_index = ""
         for i, torrent in enumerate(self.qb.torrents()):
