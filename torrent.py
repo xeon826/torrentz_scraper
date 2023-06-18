@@ -62,11 +62,3 @@ class Torrent:
 
     def get_hash(self, magnet):
         return magnet.split("&")[0].upper()
-
-        # for torrent in self.qb.torrents():
-        #     if torrent['magnet_uri'] == magnet:
-        #         print('IF')
-        #         while torrent['amount_left'] != 0:
-        #             print('WHILE')
-        #             print((torrent['completed'] / torrent['completion_on']) * 100 + '% done')
-        #             time.sleep(1)
