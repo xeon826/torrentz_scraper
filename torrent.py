@@ -12,10 +12,11 @@ class Torrent:
     stop = False
     active_torrent = ""
     progress = ""
+    qb.set_preferences(current_network_interface="nordlynx", save_path="/mnt/My_Passport/movies")
     # qb.download_from_link()
 
     def download(self, magnet):
-        self.qb.download_from_link(magnet, savepath="/mnt/My_Passport/movies/")
+        self.qb.download_from_link(magnet)
         hash = self.get_hash(magnet)
         # self.qb.toggle_sequential_download([hash])
         torrents = self.qb.torrents()
@@ -40,7 +41,7 @@ class Torrent:
         return self.progress
 
     def show_progress(self):
-        self.active_torrent = self.qb.torrents()[self.torrent_index]
+        self.active_torrent = self.qb.torrents()[int(self.torrent_index)]
         progress = (
             self.active_torrent["completed"] / self.active_torrent["total_size"]
         ) * 100

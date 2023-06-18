@@ -13,12 +13,12 @@ from termcolor import colored, cprint
 from play import MySpider
 from torrent import Torrent
 
-vpn_is_running = "Connected" in subprocess.check_output(
-    'nordvpn status | grep "Status"', shell=True, text=True
-)
-if not vpn_is_running:
-    print("VPN is not running")
-    sys.exit()
+# vpn_is_running = "Connected" in subprocess.check_output(
+#     'nordvpn status | grep "Status"', shell=True, text=True
+# )
+# if not vpn_is_running:
+#     print("VPN is not running")
+#     sys.exit()
 
 exit = Event()
 process = CrawlerProcess(
@@ -73,7 +73,7 @@ def main():
             clear()
             if torrent.get_raw_progress() > 20 and not playing:
                 subprocess.run(
-                    'nohup mpv "%s/" &' % torrent.active_torrent["content_path"],
+                    'nohup mpv "%s" &' % torrent.active_torrent["content_path"],
                     shell=True,
                 )
                 playing = True
