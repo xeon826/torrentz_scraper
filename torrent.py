@@ -24,7 +24,8 @@ class Torrent:
         for i, torrent in enumerate(self.qb.torrents()):
             if self.get_hash(torrent["magnet_uri"]) == self.get_hash(magnet):
                 self.torrent_index = i
-                self.qb.toggle_sequential_download(self.qb.torrents()[i]["infohash_v1"])
+                # self.qb.toggle_sequential_download(self.qb.torrents()[i]["infohash_v1"])
+                self.qb.toggle_first_last_piece_priority(self.qb.torrents()[i]["infohash_v1"])
                 break
 
     def stop(self):

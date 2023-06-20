@@ -3,3 +3,4 @@ scrapy
 clint
 termcolor
 tabulate
+python-opensubtitles
