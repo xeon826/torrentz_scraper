@@ -10,8 +10,8 @@ from scrapy.exceptions import CloseSpider
 from tabulate import tabulate
 from termcolor import colored, cprint
 
-from play import MySpider
-from torrent import Torrent
+from spider import MySpider
+from qbwrapper import QbWrapper
 
 # vpn_is_running = "Connected" in subprocess.check_output(
 #     'nordvpn status | grep "Status"', shell=True, text=True
@@ -31,7 +31,7 @@ process = CrawlerProcess(
 spider = MySpider()
 process.crawl(spider.__class__)
 process.start()
-torrent = Torrent()
+torrent = QbWrapper()
 
 
 def main():
@@ -64,20 +64,26 @@ def main():
     if selection == "x":
         sys.exit()
     else:
-        torrent.download(results[int(selection)]["magnet"][0])
+        magnet = results[int(selection)]["magnet"][0]
+        torrent.download(magnet)
         playing = False
+        downloading_sequentially = False
         while not exit.is_set():
             torrent.show_progress()
             exit.wait(1)
             clear = lambda: os.system("clear")
             clear()
-            if torrent.get_raw_progress() > 20 and not playing:
+            if torrent.get_raw_progress() > 40 and not playing:
                 subprocess.run(
-                    'nohup mpv "%s" &' % torrent.active_torrent["content_path"],
+                    'nohup mpv "%s" --log-file=output.txt &' % torrent.active_torrent["content_path"],
                     shell=True,
                 )
                 playing = True
                 print("playing " + str(playing))
+            if torrent.get_raw_progress() > 8 and not downloading_sequentially:
+                torrent.toggle_sequential_download(torrent.active_torrent['infohash_v1'])
+                torrent.toggle_first_last_piece_priority(torrent.active_torrent['infohash_v1'])
+                downloading_sequentially = True
             if torrent.is_complete():
                 torrent.stop()
                 break
