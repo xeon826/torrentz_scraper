@@ -1,17 +1,14 @@
 import os
 import subprocess
 import sys
-import time
-from subprocess import Popen
 from threading import Event
 
 from scrapy.crawler import CrawlerProcess
-from scrapy.exceptions import CloseSpider
 from tabulate import tabulate
-from termcolor import colored, cprint
+from termcolor import colored
 
-from spider import MySpider
 from qbwrapper import QbWrapper
+from spider import MySpider
 
 # vpn_is_running = "Connected" in subprocess.check_output(
 #     'nordvpn status | grep "Status"', shell=True, text=True
@@ -74,15 +71,21 @@ def main():
             clear = lambda: os.system("clear")
             clear()
             if torrent.get_raw_progress() > 40 and not playing:
+                # TODO use qtfaststart to determine if file has moov atom
                 subprocess.run(
-                    'nohup mpv "%s" --log-file=output.txt &' % torrent.active_torrent["content_path"],
+                    'nohup mpv "%s" --profile=low-latency --log-file=output.txt &'
+                    % torrent.active_torrent["content_path"],
                     shell=True,
                 )
                 playing = True
                 print("playing " + str(playing))
-            if torrent.get_raw_progress() > 8 and not downloading_sequentially:
-                torrent.toggle_sequential_download(torrent.active_torrent['infohash_v1'])
-                torrent.toggle_first_last_piece_priority(torrent.active_torrent['infohash_v1'])
+            if torrent.get_raw_progress() > 10 and not downloading_sequentially:
+                torrent.toggle_sequential_download(
+                    torrent.active_torrent["infohash_v1"]
+                )
+                torrent.toggle_first_last_piece_priority(
+                    torrent.active_torrent["infohash_v1"]
+                )
                 downloading_sequentially = True
             if torrent.is_complete():
                 torrent.stop()

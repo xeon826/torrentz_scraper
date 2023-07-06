@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 88
+skip-string-normalization = true
+skip-magic-trailing-comma = true
+target-version = ['py39']
+
+[tool.isort]
+profile = 'black'
+
+[tool.autoflake]
+remove-all-unused-imports = true
+in-place = true
+expand-star-imports = true
