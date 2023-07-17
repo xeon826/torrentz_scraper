@@ -4,3 +4,4 @@ clint
 termcolor
 tabulate
 python-opensubtitles
+pymp4
