@@ -72,15 +72,6 @@ def main():
             exit.wait(1)
             clear = lambda: os.system("clear")
             clear()
-            if torrent.get_raw_progress() > 40 and not playing:
-                subprocess.run(
-                    # 'nohup mpv "%s" --profile=low-latency --log-file=output.txt &'
-                    'nohup mpv "%s" --log-file=output.txt &'
-                    % torrent.active_torrent["content_path"],
-                    shell=True,
-                )
-                playing = True
-                print("playing " + str(playing))
             if torrent.get_raw_progress() > 10 and not downloading_sequentially:
                 torrent.toggle_sequential_download(
                     torrent.active_torrent["infohash_v1"]
@@ -91,31 +82,18 @@ def main():
                 downloading_sequentially = True
             if torrent.is_complete():
                 torrent.stop()
+                content_path = torrent.active_torrent["content_path"]
+                content_name = content_path.split('/')[-1]
+                subprocess.run(
+                    'docker cp "nordlynx-torrent-1:%s" "/mnt/passport/movies/%s"'
+                    % (content_path, content_name),
+                    shell=True,
+                )
+                subprocess.Popen(
+                    'mpv "/mnt/passport/movies/%s"' % content_name, shell=True
+                )
                 break
     process.stop()
-
-
-# def has_moov_atom(file_path):
-#     with open(file_path, 'rb') as f: #todo pass file path here
-#         reader = BoxReader(f)
-#         root = reader.read()
-#     moov_box = None
-
-#     for box in root.children:
-#         if box.type == 'moov':
-#             moov_box = box
-#             break
-
-#     if moov_box:
-#         # Perform validation on the moov atom
-#         # You can access and check its child boxes, metadata, and structure
-#         # For example, you can check if it contains necessary boxes like 'mvhd' (MovieHeaderBox)
-#         if any(isinstance(child, MovieHeaderBox) for child in moov_box.children):
-#             return True # moov atom present and valid
-#         else:
-#             return False # moov atom present but not valid
-#     else:
-#         return False # moov atom not present
 
 
 def quit(signo, _frame):

@@ -1,0 +1,172 @@
+[   0.000][d][global] user path: 'output.txt' -> 'output.txt'
+[   0.002][v][cplayer] mpv v0.37.0 Copyright © 2000-2023 mpv/MPlayer/mplayer2 projects
+[   0.002][v][cplayer]  built on Mar 31 2024 10:04:09
+[   0.002][v][cplayer] libplacebo version: v6.338.2
+[   0.002][v][cplayer] FFmpeg version: n6.1.1
+[   0.002][v][cplayer] FFmpeg library versions:
+[   0.002][v][cplayer]    libavutil       58.29.100
+[   0.002][v][cplayer]    libavcodec      60.31.102
+[   0.002][v][cplayer]    libavformat     60.16.100
+[   0.002][v][cplayer]    libswscale      7.5.100
+[   0.002][v][cplayer]    libavfilter     9.12.100
+[   0.002][v][cplayer]    libswresample   4.12.100
+[   0.002][v][cplayer] 
+[   0.002][v][cplayer] Configuration: -Db_pie=true -Dpython.bytecompile=1 -Dlibmpv=true -Dgl-x11=enabled -Dcaca=disabled -Dcdda=enabled -Ddvbin=enabled -Ddvdnav=enabled -Dlibarchive=enabled -Dopenal=enabled -Dprefix=/usr -Dlibexecdir=lib -Dsbindir=bin -Dauto_features=auto -Dbuildtype=plain -Dwrap_mode=nodownload
+[   0.002][v][cplayer] List of enabled features: alsa av-channel-layout avif-muxer build-date cdda cplugins cuda-hwaccel cuda-interop dmabuf-interop-gl dmabuf-wayland drm dvbin dvdnav egl egl-drm egl-helpers egl-wayland egl-x11 ffmpeg ffnvcodec gbm gl gl-x11 glibc-thread-name glob glob-posix gpl iconv jack javascript jpeg jpegxl lavu-uuid lcms2 libarchive libass libavdevice libbluray libdl libm libplacebo librt linux-fstatfs luajit manpage-build memfd-create noexecstack openal pipewire posix posix-shm ppoll pulse rubberband rubberband-3 shaderc sixel threads uchardet vaapi vaapi-drm vaapi-wayland vaapi-x11 vapoursynth vdpau vdpau-gl-x11 vector vk-khr-display vt.h vulkan vulkan-interop wayland wayland-protocols-1-27 wayland-protocols-1-31 wayland-protocols-1-32 x11 xv zimg zimg-st428 zlib
+[   0.002][v][cplayer] Command line options: '/config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]' '--log-file=output.txt'
+[   0.002][v][cplayer] mpv v0.37.0 Copyright © 2000-2023 mpv/MPlayer/mplayer2 projects
+[   0.002][v][cplayer]  built on Mar 31 2024 10:04:09
+[   0.002][v][cplayer] libplacebo version: v6.338.2
+[   0.002][v][cplayer] FFmpeg version: n6.1.1
+[   0.002][v][cplayer] FFmpeg library versions:
+[   0.002][v][cplayer]    libavutil       58.29.100
+[   0.002][v][cplayer]    libavcodec      60.31.102
+[   0.002][v][cplayer]    libavformat     60.16.100
+[   0.002][v][cplayer]    libswscale      7.5.100
+[   0.002][v][cplayer]    libavfilter     9.12.100
+[   0.002][v][cplayer]    libswresample   4.12.100
+[   0.002][v][cplayer] 
+[   0.002][v][cplayer] Configuration: -Db_pie=true -Dpython.bytecompile=1 -Dlibmpv=true -Dgl-x11=enabled -Dcaca=disabled -Dcdda=enabled -Ddvbin=enabled -Ddvdnav=enabled -Dlibarchive=enabled -Dopenal=enabled -Dprefix=/usr -Dlibexecdir=lib -Dsbindir=bin -Dauto_features=auto -Dbuildtype=plain -Dwrap_mode=nodownload
+[   0.002][v][cplayer] List of enabled features: alsa av-channel-layout avif-muxer build-date cdda cplugins cuda-hwaccel cuda-interop dmabuf-interop-gl dmabuf-wayland drm dvbin dvdnav egl egl-drm egl-helpers egl-wayland egl-x11 ffmpeg ffnvcodec gbm gl gl-x11 glibc-thread-name glob glob-posix gpl iconv jack javascript jpeg jpegxl lavu-uuid lcms2 libarchive libass libavdevice libbluray libdl libm libplacebo librt linux-fstatfs luajit manpage-build memfd-create noexecstack openal pipewire posix posix-shm ppoll pulse rubberband rubberband-3 shaderc sixel threads uchardet vaapi vaapi-drm vaapi-wayland vaapi-x11 vapoursynth vdpau vdpau-gl-x11 vector vk-khr-display vt.h vulkan vulkan-interop wayland wayland-protocols-1-27 wayland-protocols-1-31 wayland-protocols-1-32 x11 xv zimg zimg-st428 zlib
+[   0.002][d][global] home path: '' -> '/home/dan/.config/mpv'
+[   0.002][d][global] user path: '~~home/' -> '/home/dan/.config/mpv'
+[   0.002][d][global] user path: '~~old_home/' -> '/home/dan/.mpv'
+[   0.002][d][global] config path: 'encoding-profiles.conf' -/-> '/home/dan/.config/mpv/encoding-profiles.conf'
+[   0.002][d][global] config path: 'encoding-profiles.conf' -/-> '/home/dan/.mpv/encoding-profiles.conf'
+[   0.002][d][global] config path: 'encoding-profiles.conf' -> '/etc/mpv/encoding-profiles.conf'
+[   0.002][v][cplayer] Reading config file /etc/mpv/encoding-profiles.conf
+[   0.002][v][ifo_dvdnav] Opening /etc/mpv/encoding-profiles.conf
+[   0.002][v][bdmv/bluray] Opening /etc/mpv/encoding-profiles.conf
+[   0.002][v][file] Opening /etc/mpv/encoding-profiles.conf
+[   0.002][d][file] resize stream to 131072 bytes, drop 0 bytes
+[   0.002][d][file] Stream opened successfully.
+[   0.003][v][cplayer] Applying profile 'default'...
+[   0.003][d][global] config path: 'mpv.conf' -/-> '/home/dan/.config/mpv/mpv.conf'
+[   0.003][d][global] config path: 'config' -/-> '/home/dan/.config/mpv/config'
+[   0.003][d][global] config path: 'mpv.conf' -/-> '/home/dan/.mpv/mpv.conf'
+[   0.003][d][global] config path: 'config' -/-> '/home/dan/.mpv/config'
+[   0.003][d][global] config path: 'mpv.conf' -/-> '/etc/mpv/mpv.conf'
+[   0.003][d][global] config path: 'config' -/-> '/etc/mpv/config'
+[   0.003][v][cplayer] Setting option 'log-file' = 'output.txt' (flags = 8)
+[   0.003][d][global] config path: 'input.conf' -/-> '/home/dan/.config/mpv/input.conf'
+[   0.003][d][global] config path: 'input.conf' -/-> '/home/dan/.mpv/input.conf'
+[   0.003][d][global] config path: 'input.conf' -/-> '/etc/mpv/input.conf'
+[   0.003][d][global] user path: 'output.txt' -> 'output.txt'
+[   0.003][d][osc] Loading lua script @osc.lua...
+[   0.003][d][ytdl_hook] Loading lua script @ytdl_hook.lua...
+[   0.004][d][stats] Loading lua script @stats.lua...
+[   0.004][d][osc] loading mp.defaults
+[   0.004][d][ytdl_hook] loading mp.defaults
+[   0.004][d][console] Loading lua script @console.lua...
+[   0.004][d][auto_profiles] Loading lua script @auto_profiles.lua...
+[   0.004][d][stats] loading mp.defaults
+[   0.004][d][console] loading mp.defaults
+[   0.004][d][auto_profiles] loading mp.defaults
+[   0.004][d][global] config path: 'scripts' -/-> '/home/dan/.config/mpv/scripts'
+[   0.004][d][global] config path: 'scripts' -/-> '/home/dan/.mpv/scripts'
+[   0.004][d][global] config path: 'scripts' -/-> '/etc/mpv/scripts'
+[   0.004][v][cplayer] Waiting for scripts...
+[   0.004][d][osc] loading @osc.lua
+[   0.004][d][ytdl_hook] loading @ytdl_hook.lua
+[   0.004][d][console] loading @console.lua
+[   0.004][d][stats] loading @stats.lua
+[   0.004][d][auto_profiles] loading @auto_profiles.lua
+[   0.004][d][ytdl_hook] reading options for ytdl_hook 
+[   0.004][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/home/dan/.config/mpv/script-opts/ytdl_hook.conf'
+[   0.004][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/home/dan/.mpv/script-opts/ytdl_hook.conf'
+[   0.004][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/etc/mpv/script-opts/ytdl_hook.conf'
+[   0.004][d][ytdl_hook] script-opts/ytdl_hook.conf not found. 
+[   0.004][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/home/dan/.config/mpv/lua-settings/ytdl_hook.conf'
+[   0.004][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/home/dan/.mpv/lua-settings/ytdl_hook.conf'
+[   0.004][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/etc/mpv/lua-settings/ytdl_hook.conf'
+[   0.004][d][ytdl_hook] lua-settings/ytdl_hook.conf not found. 
+[   0.005][d][console] reading options for console 
+[   0.005][d][global] config path: 'script-opts/console.conf' -/-> '/home/dan/.config/mpv/script-opts/console.conf'
+[   0.005][d][global] config path: 'script-opts/console.conf' -/-> '/home/dan/.mpv/script-opts/console.conf'
+[   0.005][d][global] config path: 'script-opts/console.conf' -/-> '/etc/mpv/script-opts/console.conf'
+[   0.005][d][console] script-opts/console.conf not found. 
+[   0.005][d][global] config path: 'lua-settings/console.conf' -/-> '/home/dan/.config/mpv/lua-settings/console.conf'
+[   0.005][d][global] config path: 'lua-settings/console.conf' -/-> '/home/dan/.mpv/lua-settings/console.conf'
+[   0.005][d][global] config path: 'lua-settings/console.conf' -/-> '/etc/mpv/lua-settings/console.conf'
+[   0.005][d][console] lua-settings/console.conf not found. 
+[   0.005][d][stats] reading options for stats 
+[   0.005][d][global] config path: 'script-opts/stats.conf' -/-> '/home/dan/.config/mpv/script-opts/stats.conf'
+[   0.005][d][global] config path: 'script-opts/stats.conf' -/-> '/home/dan/.mpv/script-opts/stats.conf'
+[   0.005][d][global] config path: 'script-opts/stats.conf' -/-> '/etc/mpv/script-opts/stats.conf'
+[   0.005][d][stats] script-opts/stats.conf not found. 
+[   0.005][d][global] config path: 'lua-settings/stats.conf' -/-> '/home/dan/.config/mpv/lua-settings/stats.conf'
+[   0.005][d][global] config path: 'lua-settings/stats.conf' -/-> '/home/dan/.mpv/lua-settings/stats.conf'
+[   0.005][d][global] config path: 'lua-settings/stats.conf' -/-> '/etc/mpv/lua-settings/stats.conf'
+[   0.005][d][stats] lua-settings/stats.conf not found. 
+[   0.005][d][auto_profiles] Exiting...
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="input_console", contents="", flags="default"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="input_console", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_console", contents="", flags="force"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_console", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="input_stats", contents="", flags="default"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="input_stats", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_stats", contents="", flags="force"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_stats", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][osc] reading options for osc 
+[   0.005][d][global] config path: 'script-opts/osc.conf' -/-> '/home/dan/.config/mpv/script-opts/osc.conf'
+[   0.005][d][global] config path: 'script-opts/osc.conf' -/-> '/home/dan/.mpv/script-opts/osc.conf'
+[   0.005][d][global] config path: 'script-opts/osc.conf' -/-> '/etc/mpv/script-opts/osc.conf'
+[   0.005][d][osc] script-opts/osc.conf not found. 
+[   0.005][d][global] config path: 'lua-settings/osc.conf' -/-> '/home/dan/.config/mpv/lua-settings/osc.conf'
+[   0.005][d][global] config path: 'lua-settings/osc.conf' -/-> '/home/dan/.mpv/lua-settings/osc.conf'
+[   0.005][d][global] config path: 'lua-settings/osc.conf' -/-> '/etc/mpv/lua-settings/osc.conf'
+[   0.005][d][osc] lua-settings/osc.conf not found. 
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="showhide", contents="mouse_move script-binding osc/__keybinding1\nmouse_leave script-binding osc/__keybinding2\n", flags="force"]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="showhide_wc", contents="mouse_move script-binding osc/__keybinding3\nmouse_leave script-binding osc/__keybinding4\n", flags="force"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="showhide", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="showhide_wc", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="input", contents="mbtn_left script-binding osc/__keybinding5\nshift+mbtn_left script-binding osc/__keybinding6\nmbtn_right script-binding osc/__keybinding7\nmbtn_mid script-binding osc/__keybinding8\nwheel_up script-binding osc/__keybinding9\nwheel_down script-binding osc/__keybinding10\nmbtn_left_dbl ignore\nshift+mbtn_left_dbl ignore\nmbtn_right_dbl ignore\n", flags="force"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="input", flags=""]
+[   0.005][d][cplayer] Run command: define-section, flags=64, args=[name="window-controls", contents="mbtn_left script-binding osc/__keybinding11\n", flags="force"]
+[   0.005][d][cplayer] Run command: enable-section, flags=64, args=[name="window-controls", flags=""]
+[   0.005][v][cplayer] Set property: user-data/osc/visibility="auto" -> 1
+[   0.005][d][cplayer] Run command: disable-section, flags=64, args=[name="input"]
+[   0.005][d][cplayer] Run command: disable-section, flags=64, args=[name="window-controls"]
+[   0.005][v][cplayer] Set property: user-data/osc/margins={"r":0,"l":0,"t":0,"b":0} -> 1
+[   0.005][v][cplayer] Done loading scripts.
+[   0.005][d][global] state path: 'watch_later' -> '/home/dan/.local/state/mpv/watch_later'
+[   0.005][d][global] state path: 'watch_later' -> '/home/dan/.local/state/mpv/watch_later'
+[   0.005][v][cplayer] Running hook: ytdl_hook/on_load
+[   0.005][v][ytdl_hook] ytdl:// hook 
+[   0.005][v][ytdl_hook] not a ytdl:// url 
+[   0.005][v][cplayer] Running hook: ytdl_hook/on_load
+[   0.005][v][ytdl_hook] playlist hook 
+[   0.005][v][ifo_dvdnav] Opening /config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]
+[   0.005][v][bdmv/bluray] Opening /config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]
+[   0.005][v][file] Opening /config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]
+[   0.005][e][file] Cannot open file '/config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]': No such file or directory
+[   0.006][e][stream] Failed to open /config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX].
+[   0.006][v][cplayer] Opening failed or was aborted: /config/qBittorrent/Late Night With The Devil (2023) [1080p] [WEBRip] [5.1] [YTS.MX]
+[   0.006][v][cplayer] Set property: user-data/osc/margins={"r":0,"l":0,"t":0,"b":0} -> 1
+[   0.006][d][osc] osc_init 
+[   0.006][v][cplayer] Running hook: ytdl_hook/on_load_fail
+[   0.006][v][ytdl_hook] full hook 
+[   0.006][v][cplayer] finished playback, loading failed (reason 4)
+[   0.006][i][cplayer] Exiting... (Errors when loading file)
+[   0.006][d][console] Exiting...
+[   0.006][d][ytdl_hook] Exiting...
+[   0.006][d][stats] Exiting...
+[   0.006][v][cplayer] Set property: user-data/osc/margins={"r":0,"l":0,"t":0,"b":0} -> 1
+[   0.006][d][global] config path: 'fonts' -/-> '/home/dan/.config/mpv/fonts'
+[   0.006][d][global] config path: 'fonts' -/-> '/home/dan/.mpv/fonts'
+[   0.006][d][global] config path: 'fonts' -/-> '/etc/mpv/fonts'
+[   0.006][d][osd/libass] ASS library version: 0x1701000 (runtime 0x1701000)
+[   0.006][v][osd/libass] libass API version: 0x1701000
+[   0.006][v][osd/libass] libass source: commit: 0.17.1-0-ge8ad72accd3a84268275a9385beb701c9284e5b3-dirty
+[   0.006][v][osd/libass] Shaper: FriBidi 1.0.13 (SIMPLE) HarfBuzz-ng 8.4.0 (COMPLEX)
+[   0.006][d][global] config path: 'subfont.ttf' -/-> '/home/dan/.config/mpv/subfont.ttf'
+[   0.006][d][global] config path: 'subfont.ttf' -/-> '/home/dan/.mpv/subfont.ttf'
+[   0.006][d][global] config path: 'subfont.ttf' -/-> '/etc/mpv/subfont.ttf'
+[   0.006][d][global] config path: 'fonts.conf' -/-> '/home/dan/.config/mpv/fonts.conf'
+[   0.006][d][global] config path: 'fonts.conf' -/-> '/home/dan/.mpv/fonts.conf'
+[   0.006][d][global] config path: 'fonts.conf' -/-> '/etc/mpv/fonts.conf'
+[   0.006][v][osd/libass] Setting up fonts...
+[   0.012][v][osd/libass] Using font provider fontconfig
+[   0.012][v][osd/libass] Done.
+[   0.012][d][cplayer] Run command: del, flags=64, args=[name="user-data/osc"]
+[   0.012][d][osc] Exiting...
