@@ -2,7 +2,7 @@
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt install qbittorrent
 ```
-Enable the webui by figuring out how to do that.
+Enable the webui.
 Make sure qbittorrent is running.
 ```
 cp qb_pref.template.json qb_pref.json
